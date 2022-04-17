@@ -16,8 +16,8 @@ We decide to use the idea of feature importance. By identifying data that impact
 MsSmartyPants. (2021, June 30). Water quality. Kaggle. Retrieved February 3, 2022, from https://www.kaggle.com/datasets/mssmartypants/water-quality
 
 ## Models Used:
-Random Forest
-Neural Network
+1. Random Forest
+2. Neural Network
 
 ## Conclusion:
 
