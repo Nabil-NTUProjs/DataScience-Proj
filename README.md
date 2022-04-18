@@ -26,6 +26,10 @@ MsSmartyPants. (2021, June 30). Water quality. Kaggle. Retrieved February 3, 202
 2. Neural Network
 
 ## Conclusion:
+1. The 2 variables that appear the most number of times are Aluminium and Cadmium. From this, we can tell that the 2 variables are key to ensuring that the water is safe to drink.
+2. Using ANN to get the feature importance yields good results under random forest prediction, but not as optimal for LDA. And furthermore, ANN doesn't tell you the process of prediction. So for certain predictions could not be explained and described scientifically. Therefore, resorting to other models, like through examining Correlation, can make the prediction better to be understood, and in cases it works better under certain models that provides mathematical description, like LDA.
+3. Since the train & test accuracy rate for the feature importance methods are similar to using ALL of the variables, it can be said that using feature importance is more efficient, as it requires less computational power, because we only solve using 3 variables, instead of all variables, but yielding similar results.
+
 
 
 ## What we learned?:
