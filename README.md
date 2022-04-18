@@ -33,7 +33,9 @@ MsSmartyPants. (2021, June 30). Water quality. Kaggle. Retrieved February 3, 202
 
 
 ## What we learned?:
-
+1. We learn new methods of machine learning
+2. We learn to get different features for EDA to get a different outlook for our analysis
+3. While we can feature importance from different machine learning, we should not rely on it as the machine learning techniques does not show their inner workings . So we have to use other methods where it requires the use of mathematical formulas to give a more stable conclusion.
 
 ## References:
 
