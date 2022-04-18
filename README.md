@@ -38,4 +38,6 @@ MsSmartyPants. (2021, June 30). Water quality. Kaggle. Retrieved February 3, 202
 3. While we can feature importance from different machine learning, we should not rely on it as the machine learning techniques does not show their inner workings . So we have to use other methods where it requires the use of mathematical formulas to give a more stable conclusion.
 
 ## References:
+1. Barnett, D. (2022). Jodorowsky animated Dune in development, says crypto group. the Guardian. Retrieved from https://www.theguardian.com/film/2022/jan/24/dune-animation-based-on-jodorowsky-concept-art-in-development-says-cryptocurrency-group-spice-dao-frank-herbert.
+2. 
 
