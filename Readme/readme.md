@@ -3,22 +3,6 @@
 2. Su Gaoyang (U2121723E)
 3. Scott Wong  (U2122366G)
 
-## Background:
-Let us first take a look into the global Drinking water quality issue.
-•	Globally, 772 million people lack basic access to clean water.
-•	The number of deaths due to unsafe water is 485,000 in 2020.
-•	With so many different water samples around the world, a lot of resources and computational powers are spent to test on factors affecting the quality of water.
-
-With this regard, is it necessary to test the quality of water based on ALL of the available variables in the water sample? Including ALL of the available variables may become a time-consuming process and demand a lot of computational power, which is certainly not viable for the prevalent testing of the water. In an attempt to improve efficiency and to improve prediction accuracy of testing of the water samples, we decide to look into feature importance,  where feature Importance refers to techniques that calculate a score for all the input features for a given model — the scores simply represent the “importance” of each feature. A higher score means that the specific feature will have a larger effect on the model that is being used to predict a certain variable. From the set of the scores, we can then sieve out the most important features, for prediction. 
-
-## Why Feature Importance is useful
-1. Data Understanding - Like a correlation matrix, feature importance allows us to understand the relationship between the various dependent variables and the independent variables. It enables us to understand what features are irrelevant, so that we can sieve them out.
-2. Model Improvement - The scores calculated from feature importance can help to reduce dimensionality of the model (LDA and PCA). The higher scores are kept and lower scores that are deemed as less correlated with the model are removed. This simplifies the model, and also makes the model more efficient, improving the performance of the model. As such, selecting the appropriate features for these models is important. Irrelevant data culminates in bias, potentially decreasing accuracy of our prediction. Excessive columns of data in the dataset takes too much computational power and time, inefficient and redundant.
-
-## Problem Statement: 
-With so many different factors that can affect water quality, which ones have the most impact?<br>
-We decide to use the idea of feature importance. By identifying data that impacts the decision the most we can increase our data accuracy prediction and improve efficiency. 
-
 ## Dataset from:
 MsSmartyPants. (2021, June 30). Water quality. Kaggle. Retrieved February 3, 2022, from https://www.kaggle.com/datasets/mssmartypants/water-quality
 
@@ -26,6 +10,30 @@ MsSmartyPants. (2021, June 30). Water quality. Kaggle. Retrieved February 3, 202
 1. [Data Extraction And Data Preparation](https://github.com/Note06/DataScience-Proj/blob/main/1015-Proj%20EDA.ipynb)
 2. [Using Machine Learning to get feature importance](https://github.com/Note06/DataScience-Proj/blob/main/All%20variable%20machine%20learning.ipynb)
 3. [Prediction Models](https://github.com/Note06/DataScience-Proj/blob/main/Prediction%20using%20Feature%20Importance.ipynb)
+
+## Background:
+Let us first take a look into the global Drinking water quality issue.<br>
+•	Globally, 772 million people lack basic access to clean water.<br>
+•	The number of deaths due to unsafe water is 485,000 in 2020.<br>
+•	With so many different water samples around the world, a lot of resources and computational powers are spent to test on factors affecting the quality of water.<br>
+
+With this regard, is it necessary to test the quality of water based on ALL of the available variables in the water sample? Including ALL of the available variables may become a time-consuming process and demand a lot of computational power, which is certainly not viable for the prevalent testing of the water. In an attempt to improve efficiency and to improve prediction accuracy of testing of the water samples, we decide to look into feature importance,  where feature Importance refers to techniques that calculate a score for all the input features for a given model — the scores simply represent the “importance” of each feature. A higher score means that the specific feature will have a larger effect on the model that is being used to predict a certain variable. From the set of the scores, we can then sieve out the most important features, for prediction. 
+
+## Problem Statement: 
+With so many different factors that can affect water quality, which ones have the most impact?<br>
+How does the prediction accuracy of the selected variables based on feature importance compare with prediction using all variables?<br>
+
+We decide to use the idea of feature importance. By identifying data that impacts the decision the most we can increase our data accuracy prediction and improve efficiency. Evidently, our problem statement can be applied other scenarios, but we have decided to use this dataset, as the problem of water quality is pertinent. Through this water quality dataset, we can then expand it to other more complex data sets (such as datasets featuring a mix of continuous/categorical data, or even data with respect to the time/chronological domain).
+
+## Why Feature Importance is useful
+1. Data Understanding 
+Like a correlation matrix, feature importance allows us to understand the relationship between the various dependent variables and the independent variables. It enables us to understand what features are irrelevant, so that we can sieve them out.
+2. Model Improvement
+The scores calculated from feature importance can help to reduce dimensionality of the model (LDA and PCA). The higher scores are kept and lower scores that are deemed as less correlated with the model are removed. This simplifies the model, and also makes the model more efficient, improving the performance of the model. 
+
+As such, ***selecting the appropriate features for these models is important***. Irrelevant data culminates in bias, potentially ***decreasing accuracy of our prediction***. Excessive columns of data in the dataset takes too much computational power and time, ***inefficient and redundant***.
+
+
 
 ## Models Used:
 1. Random Forest (In presentation, used for finding feature importance, and Prediction of the model)
@@ -35,7 +43,7 @@ MsSmartyPants. (2021, June 30). Water quality. Kaggle. Retrieved February 3, 202
 5. Linear Discriminant Analysis & Principle Discriminant Analysis (Used for prediction of the model 
 
 
-**2. Data preparation and Exploratory Data Analysis**
+## Data preparation and Exploratory Data Analysis
 
 As our problem mainly consist of continuous data (dependent variables) as well as categorical data(for independent variable), to see how each of the dependent variable affect the independent variable, we would need to perform visualization on the dependent variables (uni-variate exploration), as well as combinations of some of the variables (bi-variate exploration), with respect to the independent variable of is\_safe. 
 
@@ -43,45 +51,40 @@ To complement the approximation of seeing from approximation of the data, we hav
 
 But before that, we need to perform data preparation as well as some exploratory data analysis. Some forms of data cleaning include:
 
-1) txtdata**=**"aluminium - dangerous if greater than 2.8 ammonia - dangerous if greater than 32.5 arsenic - dangerous if greater than 0.01…. 
-
-A string description of the txtdata. The txtdata string shows the indications for the safe and dangerous pertaining to each variable. (**Take not that they are not related to the overall is\_safe water quality, just an indication of the dangerous amounts of each element**)
-
-(But of course, we can use this set of indicators to interpret how do they affect and predict the overall is\_safe, later on)
-
+1) txtdata="aluminium - dangerous if greater than 2.8 ammonia - dangerous if greater than 32.5 arsenic - dangerous if greater than 0.01…. <br>
+A string description of the txtdata. The txtdata string shows the indications for     the safe and dangerous pertaining to each variable. (**Take not that they are not related to the overall is\_safe water quality, just an indication of the dangerous amounts of each element**)
 Where through this, we need to extract  all of the **threshold values** from the abovementioned txtdata file, to be used later to create **binary categorical columns** for each of the variables.
 
 
-1) As for the data set, we can see that it is highly imbalanced. 
+2) As for the data set, we can see that it is highly imbalanced. 
 
 ![](Aspose.Words.27acc061-d1be-46c8-b3d1-fed75dd6db93.001.png)
 
-`	`0        7084
+0   |     7084
 
-`	`1         912
+1    |     912
 
-`	`#NUM!       3
+#NUM!    |   3
 
-`	`Name: is\_safe, dtype: int64
-
+Name: is\_safe, dtype: int64
 
 
 **High imbalance** between 1 and 0, the training model may **overtrain  negatives** and **undertrain from positive ones**. Resulting in **low accuracy** for the positives. Also, we need to remove the #NUM! values as they are irrelevant and obstructive to our computations later on. 
 
 
-1) Using the info() method to retrieve dataframe information, we noticed that ammonia is inconsistent and has to be changed to float64. If ammonia is an object, then it would not be able to function as a continuous data, that is required for further machine learning and modelling. Therefore, it would be required for us to change the ammonia to float64.
+3) Using the info() method to retrieve dataframe information, we noticed that ammonia is inconsistent and has to be changed to float64. If ammonia is an object, then it would not be able to function as a continuous data, that is required for further machine learning and modelling. Therefore, it would be required for us to change the ammonia to float64.
 
 ![](Aspose.Words.27acc061-d1be-46c8-b3d1-fed75dd6db93.002.png)
 
 
 
-**Exploratory Data Analysis**
+### Exploratory Data Analysis
 
 As mentioned above, uni-variate exploration, as well as combinations of some of the variables (bi-variate exploration) are required to examine and visualize the data to yield insightful analysis from it.  In this case, we have adopted:
 
 1. Boxplot, histplot, countplot (univariate)
-1. Stripplot/swarmplot, density plot(bi-variate with respect to the independent variable)
-1. Kdeplot(2 dependent variable compared with each other)
+2. Stripplot/swarmplot, density plot(bi-variate with respect to the independent variable)
+3. Kdeplot(2 dependent variable compared with each other)
 
 Through the analysis of all the plots, we have come to a conclusion that Uranium, Arsenic and Cadmium have the highest chance of influencing the decision of safe water.
 
@@ -97,7 +100,7 @@ Therefore, such features would not be taken into account.
 - The contrast between boxplots and histplots: is\_safe==0 data for a specific variable has its interquartile range of boxplots smaller than is\_safe==1 (i.e. Q3 for is\_safe==1 for cadmium is even smaller than Q1 for is\_safe==0)
 - The mode of the amount of the variable is higher for is\_safe==1, compared to is\_safe==0, at a lower amount. (i.e. for cadmium, although the mode is similar between 0.000- 0.025 for BOTH is\_safe==0 and is\_safe==1, the density for mode(is\_safe==1) is around 20, while density for mode(is\_safe==0) is only at around 7. This shows that for is\_safe==1, there is definitely a higher percetage of the variable with lower amounts, compared to is\_safe==0)
 
-For arsenic, **mode** for safe for Arsenic has **higher density percentage**, at a lower value(left skewed), compared to unsafe for Arsenic. ![](Aspose.Words.27acc061-d1be-46c8-b3d1-fed75dd6db93.003.png)
+For `arsenic`, **mode** for safe for Arsenic has **higher density percentage**, at a lower value(left skewed), compared to unsafe for Arsenic. ![](Aspose.Words.27acc061-d1be-46c8-b3d1-fed75dd6db93.003.png)
 
 From the **stripplot**, it can be observed that at higher arsenic values, the density for unsafe is higher as compared to safe, as the scatters for is\_safe==0 is less scarce in comparison with safe.
 
@@ -105,9 +108,9 @@ From the **stripplot**, it can be observed that at higher arsenic values, the
 
 Therefore it can inferred that higher arsenic values might have correlation with the water being unsafe.
 
-Similarly for cadmium, we can see that the **mode** of safe has a higher density percentages at a lower value, as compared to unsafe. Also the **boxplot** for safe is smaller than for unsafe, as we can see **boxplot** for cadmium (is\_safe==1) has its **Q3**  even smaller than the Q1 for **boxplot** for cadmium(is\_safe==0).![](Aspose.Words.27acc061-d1be-46c8-b3d1-fed75dd6db93.005.png)
+Similarly for `cadmium`, we can see that the **mode** of safe has a higher density percentages at a lower value, as compared to unsafe. Also the **boxplot** for safe is smaller than for unsafe, as we can see **boxplot** for cadmium (is\_safe==1) has its **Q3**  even smaller than the Q1 for **boxplot** for cadmium(is\_safe==0).![](Aspose.Words.27acc061-d1be-46c8-b3d1-fed75dd6db93.005.png)
 
-For uranium, we can see that the **violin plot** is skewed oppositely with the safe values concentrated on lower ends, and unsafe values on higher ends.
+For `uranium`, we can see that the **violin plot** is skewed oppositely with the safe values concentrated on lower ends, and unsafe values on higher ends.
 
 ![](Aspose.Words.27acc061-d1be-46c8-b3d1-fed75dd6db93.005.png)
 
@@ -124,7 +127,7 @@ For our case, comparing all the dependent variables with our independent variabl
 
 ![](Aspose.Words.27acc061-d1be-46c8-b3d1-fed75dd6db93.006.png)
 
-In this case we pick the **top 3 absolute values** of correlation between is\_safe and the variables. We pick aluminium, cadmium and chromium as feature importance derived from the correlation method.
+In this case we pick the **top 3 absolute values** of correlation between is\_safe and the variables. We pick `aluminium`, `cadmium` and `chromium` as feature importance derived from the correlation method.
 
 ![](Aspose.Words.27acc061-d1be-46c8-b3d1-fed75dd6db93.007.png) 
 
@@ -132,7 +135,7 @@ In this case we pick the **top 3 absolute values** of correlation between is\_
 
 Through visualising the 3D plot based on the top 3 feature importance picked from correlation constant, we can tell that  with low cadmium counts, there is a higher density for safe. Also, for lower aluminium count accounts for higher density for unsafe.
 
-3. **Finding Feature importance from Machine Learning Techniques**
+## Finding Feature importance from Machine Learning Techniques
 
 On top of “seeing” from the visualisation of EDA, and through correlation, a more accurate prediction method could be determined through machine learning techniques. For that we have picked Random forest and Artificial Neural Network. 
 
@@ -148,110 +151,74 @@ Therefore, if a lot of data is to be processed, but not caring much about explai
 
 Therefore, we pick random forest, as well as Deep neural networks to predict the feature importance with greater accuracy. The trade-off is that it lowers the explainability of the models, as the description of the processes would not be a matter of the concern, but rather the final prediction outcomes. 
 
-**RANDOM FOREST**
+### RANDOM FOREST
 
 For the random forest, we have decided to use an inbuilt library from sklearn:
 
-**<code>**
+<pre><code>
+from sklearn.ensemble import RandomForestClassifier<br>
+#Create a Gaussian Classifier<br>
+clf=RandomForestClassifier(n_estimators=100)<br>
+#Train the model using the training sets y_pred=clf.predict(X_test)<br>
+clf.fit(X_train,y_train.values.ravel())<br>
+y_pred_train= clf.predict(X_train)<br>
+y_pred_test=clf.predict(X_test)<br>
+feature_names=OriginalDataForLDA.columns[0:20]<br>
 
-**from** sklearn.ensemble **import** RandomForestClassifier
-
-*#Create a Gaussian Classifier*
-
-clf**=**RandomForestClassifier(n\_estimators**=**100)
-
-*#Train the model using the training sets y\_pred=clf.predict(X\_test)*
-
-clf**.**fit(X\_train,y\_train**.**values**.**ravel())
-
-y\_pred\_train**=** clf**.**predict(X\_train)
-
-y\_pred\_test**=**clf**.**predict(X\_test)
-
-feature\_names**=**OriginalDataForLDA**.**columns[0:20]
-
-feature\_imp **=** pd**.**Series(clf**.**feature\_importances\_,index**=**feature\_names)**.**sort\_values(ascending**=False**)
-
-feature\_imp
-
-**</code>**
+feature_imp =pd.Series(clf.feature_importances_,index=feature_names).sort_values(ascending=False)
+feature_imp<br>  
+</code></pre>
 
 Through this, we can find the feature importance based on random forest, and we choose the top 3 variables, namely `aluminium`,`cadmium`,`perchlorate`.
 
 
 ![](Aspose.Words.27acc061-d1be-46c8-b3d1-fed75dd6db93.010.png)
 
-**ARTIFICIAL NEURAL NETWORK**
+### ARTIFICIAL NEURAL NETWORK
 
 Similar to Random forest, we need to remove missing values and convert all categorical data into numerical ones, we would also need to pre-process the data by scaling all the features into a same range. 
 
-**<code>**
-
-**from** sklearn.preprocessing **import** MinMaxScaler
-
-scaler **=** MinMaxScaler()
-
-OriginalDataForLDA**.**iloc[:,0:20] **=** scaler**.**fit\_transform(OriginalDataForLDA**.**iloc[:,0:20])
-
-X **=** OriginalDataForLDA**.**iloc[:,0:20]
-
-y **=** OriginalDataForLDA['is\_safe']
-
-y**=**y**.**astype(float, errors **=** 'raise')
-
-**</code>**
+<pre><code>
+from sklearn.preprocessing import MinMaxScaler<br>
+scaler = MinMaxScaler()<br>
+OriginalDataForLDA.iloc[:,0:20] = scaler.fit_transform(OriginalDataForLDA.iloc[:,0:20])<br>
+X = OriginalDataForLDA.iloc[:,0:20]<br>
+y = OriginalDataForLDA['is_safe']<br>
+y=y.astype(float, errors = 'raise')<br>
+</code></pre>
 
 After processing the data, the architecture of the neural network is created, where the the number of layers (usually 2 or 3) is to be decided, along with how many neurons in each layers and activation functions.  Afterwards, we can also choose to tune the algorithm with an optimiser (optional), where we can tune the learning rate, momentum and decay.
 
-**<code>**
+<pre><code>
+import tensorflow as tf <br>
+from tensorflow import keras <br>
+from keras.wrappers.scikit_learn import KerasClassifier, KerasRegressor <br>
+import eli5 <br>
+from eli5.sklearn import PermutationImportance <br>
+</code></pre>
 
-**import** tensorflow **as** tf
+<br>
+<br>
+<pre><code>
+def base_model():<br>
+  model = keras.Sequential([
+          keras.layers.Dense(20, input_shape=(20,), activation='relu'),
+          keras.layers.Dense(15, activation='relu'),
+          keras.layers.Dense(1, activation='sigmoid')
+          ])
+  def get_optimizer():
+    return tf.keras.optimizers.Adam(learning_rate=0.01)<br>
+    
+    model.compile(optimizer=get_optimizer(),
+                loss='binary_crossentropy',
+                metrics=['accuracy'])
+    model.evaluate(X_test, y_test)
+    return model
 
-**from** tensorflow **import** keras
+my_model = KerasRegressor(buildfn=base_model)    
 
-**from** keras.wrappers.scikit\_learn **import** KerasClassifier, KerasRegressor
-
-**import** eli5
-
-**from** eli5.sklearn **import** PermutationImportance
-
-**def** base\_model():
-
-`    `model **=** keras**.**Sequential([
-
-`    `keras**.**layers**.**Dense(20, input\_shape**=**(20,), activation**=**'relu'),
-
-`    `keras**.**layers**.**Dense(15, activation**=**'relu'),
-
-`    `keras**.**layers**.**Dense(1, activation**=**'sigmoid')
-
-`    `])
-
-`    `**def** get\_optimizer():
-
-`        `**return** tf**.**keras**.**optimizers**.**Adam(learning\_rate**=**0.01)
-
-
-*# opt = keras.optimizers.Adam(learning\_rate=0.01)*
-
-`    `model**.**compile(optimizer**=**get\_optimizer(),
-
-`              `loss**=**'binary\_crossentropy',
-
-`              `metrics**=**['accuracy'])
-
-
-
-`    `model**.**evaluate(X\_test, y\_test)
-
-`    `**return** model
-
-
-my\_model **=** KerasRegressor(build\_fn**=**base\_model)    
-
-history**=**my\_model**.**fit(X\_train, y\_train, validation\_data**=**(X\_test, y\_test), epochs**=**150)
-
-**</code>**
+history=my_model.fit(X_train, y_train, validation_data=(X_test, y_test), epochs=150)
+</code></pre>
 
 For this particular model, we have adopted keras.Sequantial() model, which is a linear stack of layers, where new layers are added on top of existing layers. For this model, we have incorporated 3 layers. In the first layer, we have 20 input features(neurons), which gradually passes onto the next layer, and finally to the output layer, with 1 neuron (output, 1 or 0).
 
@@ -278,7 +245,7 @@ Using the results from neural network, we can then find the feature importance, 
 Therefore, the top 3 features chosen from feature importance by using ANN is `aluminium`,`perchlorate`,`silver`.
 
 
-3. **Using top 3 variables of feature importance derived from each method, perform prediction using Random Forest and Linear Discriminant Analysis, and compare with prediction using all 20 variables.**
+## Using top 3 variables of feature importance derived from each method, perform prediction using Random Forest and Linear Discriminant Analysis, and compare with prediction using all 20 variables.
 
 Top three variables from feature importance using EDA: `uranium`, `arsenic`,`cadmium`
 
@@ -345,15 +312,16 @@ Thus, for each set of the top 3 variables from feature importance (using EDA, Co
 
 
 
-|<p> </p><p> </p>|**With All 20 variables**|**(Top 3 features) With feature Importance**|
-| :- | :- | :- |
-|||<p>**(Top 3 features**</p><p>`  `**derived using each of the methods)**</p>|
-|** ||**EDA**|**Correlation**|**Random Forest**|<p>**Neural**</p><p>`  `**Network**</p>|
-|**Model of Prediction** |RF|LDA|RF|LDA|RF|LDA|RF|LDA|RF|LDA|
-|**Classification Accuracy**|1|0.783|0.92|0.743|0.993|0.773|1|0.795|1|0.772|
-|**True Positive**|676|523|591|` `495|684|` `560|676|` `602|669|551|
-|**True Negative**|692|548|`   `662|` `522|675|` `498|692|486|699|` `505|
-|**False Positive**|0|` `155|84|` `189|0|` `117|0|` `86|0|` `130|
+|                         | With All 20 variables |            | With feature Importance |          |             |       |               |       |                |         |
+|-------------------------|-----------------------|------------|-------------------------|----------|-------------|-------|---------------|-------|----------------|---------|
+|                         |                       |            | Top 3                   | features | derived     | using | each          | of    | the            | methods |
+|                         | With                  | GridSearch | EDA                     |          | Correlation |       | Random Forest |       | Neural Network |         |
+| Model of Prediction     | RF                    | LDA        | RF                      | LDA      | RF          | LDA   | RF            | LDA   | RF             | LDA     |
+| Classification Accuracy | 1                     | 0.783      | 0.92                    | 0.743    | 0.993       | 0.773 | 1             | 0.795 | 1              | 0.772   |
+| True Positive           | 676                   | 523        | 591                     | 495      | 684         | 560   | 676           | 602   | 669            | 551     |
+| True Negative           | 692                   | 548        | 662                     | 522      | 675         | 498   | 692           | 486   | 699            | 505     |
+| False Positive          | 0                     | 155        | 84                      | 189      | 0           | 117   | 0             | 86    | 0              | 130     |
+| False Negative          | 0                     | 142        | 31                      | 162      | 9           | 193   | 0             | 194   | 0              | 182     |
 
 
 It can be seen that, through using all 20 variables, and as compared to only using 3 features from the respective feature importance methods, we can see that the classification accuracy are actually comparable, where top 3 features from neural network, random forest and correlation yields 1, 1 and 0.993 respectively, compared to 1 for all 20 variables, this shows that using 3 features is as effective in terms of prediction accuracy as compared to ALL 20 variables, while saving resources and computational cost. 
