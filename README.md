@@ -45,4 +45,6 @@ MsSmartyPants. (2021, June 30). Water quality. Kaggle. Retrieved February 3, 202
 ## References:
 1. Barnett, D. (2022). Jodorowsky animated Dune in development, says crypto group. the Guardian. Retrieved from https://www.theguardian.com/film/2022/jan/24/dune-animation-based-on-jodorowsky-concept-art-in-development-says-cryptocurrency-group-spice-dao-frank-herbert.
 2. Raval, D., 2022. Churn Prediction using Neural Networks and ML models. [online] Medium. Available at: <https://towardsdatascience.com/churn-prediction-using-neural-networks-and-ml-models-c817aadb7057>.
+3. Variable importance in neural networks | R-bloggers. R-bloggers. (2013). Retrieved from https://www.r-bloggers.com/2013/08/variable-importance-in-neural-networks/.
+4. ML | Linear Discriminant Analysis - GeeksforGeeks. GeeksforGeeks. (2021). Retrieved from https://www.geeksforgeeks.org/ml-linear-discriminant-analysis/.
 
