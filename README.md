@@ -11,9 +11,9 @@
 ##
 
 ## Please view the codes in this order:
-1. Data Extraction And Data Preparation (EDA: https://github.com/Note06/DataScience-Proj/blob/main/1015-Proj%20EDA.ipynb ) / (Correlation: https://github.com/Note06/DataScience-Proj/blob/main/1015-Proj%20EDA%2BCorrelation%20(2).ipynb )
-2. Using Machine Learning to get feature importance (Random forest: https://github.com/Note06/DataScience-Proj/blob/main/1015-Proj%20EDA%2BRandom%20Forest%20(3).ipynb ) /  (Neural Network: https://github.com/Note06/DataScience-Proj/blob/main/1015-Proj%20EDA%20%2B%20Neural%20Network.ipynb )
-3. We then use the data identified from EDA, Correlation, Random Forest and Neural Network ,and apply it to different prediction models. (EDA: https://github.com/Note06/DataScience-Proj/blob/main/Prediction%20with%20Feature%20Importance(EDA).ipynb ) / (Correlation: https://github.com/Note06/DataScience-Proj/blob/main/Prediction%20with%20Feature%20Importance(Correlation).ipynb ) / (Random Forest: https://github.com/Note06/DataScience-Proj/blob/main/Prediction%20with%20Feature%20Importance(Random%20Forrest).ipynb ) / (Neural Network: https://github.com/Note06/DataScience-Proj/blob/main/Prediction%20with%20Feature%20Importance(NeuralNetwork).ipynb )
+1. [Data Extraction And Data Preparation](https://github.com/Note06/DataScience-Proj/blob/main/1015-Proj%20EDA.ipynb)
+2. [Using Machine Learning to get feature importance](https://github.com/Note06/DataScience-Proj/blob/main/All%20variable%20machine%20learning.ipynb)
+3. [Prediction Models](https://github.com/Note06/DataScience-Proj/blob/main/Prediction%20using%20Feature%20Importance.ipynb)
 
 
 ## Problem Statement: 
