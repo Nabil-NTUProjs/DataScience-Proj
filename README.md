@@ -51,7 +51,7 @@ To complement the approximation of seeing from approximation of the data, we hav
 
 But before that, we need to perform data preparation as well as some exploratory data analysis. Some forms of data cleaning include:
 
-1) txtdata="aluminium - dangerous if greater than 2.8 ammonia - dangerous if greater than 32.5 arsenic - dangerous if greater than 0.01…. <br>
+1) <pre><code> txtdata="aluminium - dangerous if greater than 2.8 ammonia - dangerous if greater than 32.5 arsenic - dangerous if greater than 0.01….</code></pre> <br>
 A string description of the txtdata. The txtdata string shows the indications for     the safe and dangerous pertaining to each variable. (**Take not that they are not related to the overall is\_safe water quality, just an indication of the dangerous amounts of each element**)
 Where through this, we need to extract  all of the **threshold values** from the abovementioned txtdata file, to be used later to create **binary categorical columns** for each of the variables.
 
@@ -274,7 +274,7 @@ As such, we decide to adopt another machine learning model with enhanced explain
 
 
 
-**Linear Discriminant Analysis**
+###Linear Discriminant Analysis**
 
 We have chosen Linear Discriminant Analysis as the second model, with enhanced explanability due to its strong mathematical basis. It is a dimensionality reduction technique which projects the features in higher dimension space to lower dimensions. 
 
