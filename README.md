@@ -274,7 +274,7 @@ As such, we decide to adopt another machine learning model with enhanced explain
 
 
 
-###Linear Discriminant Analysis**
+### Linear Discriminant Analysis
 
 We have chosen Linear Discriminant Analysis as the second model, with enhanced explanability due to its strong mathematical basis. It is a dimensionality reduction technique which projects the features in higher dimension space to lower dimensions. 
 
