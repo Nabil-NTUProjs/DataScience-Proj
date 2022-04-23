@@ -59,7 +59,8 @@ Where through this, we need to extract  all of the **threshold values** from 
 2) As for the data set, we can see that it is highly imbalanced. 
 
 ![](https://github.com/Note06/DataScience-Proj/blob/main/Readme/Aspose.Words.27acc061-d1be-46c8-b3d1-fed75dd6db93.001.png)
-
+<br>
+<pre><code>
 0   |     7084
 
 1    |     912
@@ -67,7 +68,7 @@ Where through this, we need to extract  all of the **threshold values** from 
 #NUM!    |   3
 
 Name: is\_safe, dtype: int64
-
+</code></pre>
 
 **High imbalance** between 1 and 0, the training model may **overtrain  negatives** and **undertrain from positive ones**. Resulting in **low accuracy** for the positives. Also, we need to remove the #NUM! values as they are irrelevant and obstructive to our computations later on. 
 
