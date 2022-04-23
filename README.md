@@ -100,7 +100,8 @@ Therefore, such features would not be taken into account.
 - The contrast between boxplots and histplots: is\_safe==0 data for a specific variable has its interquartile range of boxplots smaller than is\_safe==1 (i.e. Q3 for is\_safe==1 for cadmium is even smaller than Q1 for is\_safe==0)
 - The mode of the amount of the variable is higher for is\_safe==1, compared to is\_safe==0, at a lower amount. (i.e. for cadmium, although the mode is similar between 0.000- 0.025 for BOTH is\_safe==0 and is\_safe==1, the density for mode(is\_safe==1) is around 20, while density for mode(is\_safe==0) is only at around 7. This shows that for is\_safe==1, there is definitely a higher percetage of the variable with lower amounts, compared to is\_safe==0)
 
-For `arsenic`, **mode** for safe for Arsenic has **higher density percentage**, at a lower value(left skewed), compared to unsafe for Arsenic. ![](https://github.com/Note06/DataScience-Proj/blob/main/Readme/Aspose.Words.27acc061-d1be-46c8-b3d1-fed75dd6db93.003.png)
+For `arsenic`, **mode** for safe for Arsenic has **higher density percentage**, at a lower value(left skewed), compared to unsafe for Arsenic. 
+![](https://github.com/Note06/DataScience-Proj/blob/main/Readme/Aspose.Words.27acc061-d1be-46c8-b3d1-fed75dd6db93.003.png)
 
 From the **stripplot**, it can be observed that at higher arsenic values, the density for unsafe is higher as compared to safe, as the scatters for is\_safe==0 is less scarce in comparison with safe.
 
@@ -131,9 +132,7 @@ For our case, comparing all the dependent variables with our independent variabl
 
 In this case we pick the **top 3 absolute values** of correlation between is\_safe and the variables. We pick `aluminium`, `cadmium` and `chromium` as feature importance derived from the correlation method.
 
-![](https://github.com/Note06/DataScience-Proj/blob/main/Readme/Aspose.Words.27acc061-d1be-46c8-b3d1-fed75dd6db93.007.png) 
-
-![](https://github.com/Note06/DataScience-Proj/blob/main/Readme/Aspose.Words.27acc061-d1be-46c8-b3d1-fed75dd6db93.008.png)
+![](https://github.com/Note06/DataScience-Proj/blob/main/Readme/Aspose.Words.27acc061-d1be-46c8-b3d1-fed75dd6db93.007.png) ![](https://github.com/Note06/DataScience-Proj/blob/main/Readme/Aspose.Words.27acc061-d1be-46c8-b3d1-fed75dd6db93.008.png)
 
 Through visualising the 3D plot based on the top 3 feature importance picked from correlation constant, we can tell that  with low cadmium counts, there is a higher density for safe. Also, for lower aluminium count accounts for higher density for unsafe.
 
