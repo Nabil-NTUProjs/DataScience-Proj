@@ -6,6 +6,7 @@
 | Contribution List     	|                                 	|
 |-----------------------	|---------------------------------	|
 | Members:              	| Worked On:                      	|
+| Everyone                | Data Preparation                  | 
 | Muhammad Nabil Hakeem 	| EDA, Random Forest              	|
 | Su Gaoyang            	| EDA, LDA, Neural Network        	|
 | Scott Wong            	| Presentation Slides, GridSearch 	|
