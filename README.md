@@ -34,9 +34,9 @@ How does the prediction accuracy of the selected variables based on feature impo
 We decide to use the idea of feature importance. By identifying data that impacts the decision the most we can increase our data accuracy prediction and improve efficiency. Evidently, our problem statement can be applied other scenarios, but we have decided to use this dataset, as the problem of water quality is pertinent. Through this water quality dataset, we can then expand it to other more complex data sets (such as datasets featuring a mix of continuous/categorical data, or even data with respect to the time/chronological domain).
 
 ## Why Feature Importance is useful
-1. Data Understanding 
+1. **Data Understanding** :
 Like a correlation matrix, feature importance allows us to understand the relationship between the various dependent variables and the independent variables. It enables us to understand what features are irrelevant, so that we can sieve them out.
-2. Model Improvement
+2. **Model Improvement** :
 The scores calculated from feature importance can help to reduce dimensionality of the model (LDA and PCA). The higher scores are kept and lower scores that are deemed as less correlated with the model are removed. This simplifies the model, and also makes the model more efficient, improving the performance of the model. 
 
 As such, ***selecting the appropriate features for these models is important***. Irrelevant data culminates in bias, potentially ***decreasing accuracy of our prediction***. Excessive columns of data in the dataset takes too much computational power and time, ***inefficient and redundant***.
