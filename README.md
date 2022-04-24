@@ -48,7 +48,7 @@ As such, ***selecting the appropriate features for these models is important***.
 2. Neural Network (In presentation, used for finding feature importance)
 3. K Nearest Neighbours (Never discuss in the slide, but performed the model)
 4. Logistic Regression (Never discuss in the slide, but performed the model)
-5. Linear Discriminant Analysis & Principle Discriminant Analysis (Used for prediction of the model 
+5. Linear Discriminant Analysis & Principle Discriminant Analysis (Used for prediction of the model) 
 
 
 ## Data preparation and Exploratory Data Analysis
@@ -230,17 +230,17 @@ my_model = KerasRegressor(buildfn=base_model)
 history=my_model.fit(X_train, y_train, validation_data=(X_test, y_test), epochs=150)
 </code></pre>
 
-For this particular model, we have adopted keras.Sequantial() model, which is a linear stack of layers, where new layers are added on top of existing layers. For this model, we have incorporated 3 layers. In the first layer, we have 20 input features(neurons), which gradually passes onto the next layer, and finally to the output layer, with 1 neuron (output, 1 or 0).
+For this particular model, we have adopted `keras.Sequantial()` model, which is a linear stack of layers, where new layers are added on top of existing layers. For this model, we have incorporated 3 layers. In the first layer, we have 20 input features(neurons), which gradually passes onto the next layer, and finally to the output layer, with 1 neuron (output, 1 or 0).
 
-In the first layer, we used the ‘relu’ activation function, where the output of individual nodes are are determined as the function output. the ‘relu’ is half rectified function. The output is zero when input is negative and zero and output is equivalent to input when input is bigger than zero. This effectively gets rid of negative data from the features, which are not useful for deriving the overall probability.
+In the first layer, we used the `relu` activation function, where the output of individual nodes are are determined as the function output. the `relu` is half rectified function. The output is zero when input is negative and zero and output is equivalent to input when input is bigger than zero. This effectively gets rid of negative data from the features, which are not useful for deriving the overall probability.
 
-For the last layer, we used ‘sigmoid’ activation function to predict the output probability, this is akin to a logistic regression, where the function exists between (0-1), as the input of the neuron gets higher, it will reach closer to 1, and conversely, it reaches closer to 0. Therefore, it can be used to determine the probability of an output, where if the range is closer to 1, it would predict the is\_safe value as closer to 1. 
+For the last layer, we used `sigmoid` activation function to predict the output probability, this is akin to a logistic regression, where the function exists between (0-1), as the input of the neuron gets higher, it will reach closer to 1, and conversely, it reaches closer to 0. Therefore, it can be used to determine the probability of an output, where if the range is closer to 1, it would predict the is\_safe value as closer to 1. 
 
 ![](https://github.com/Note06/DataScience-Proj/blob/main/Readme/Aspose.Words.27acc061-d1be-46c8-b3d1-fed75dd6db93.011.png)
 
 
 
-**To complement the training of data through the layers, we used Adam Optimiser where it** maintains a per-parameter learning rate to improve performance on problems with sparse gradients. Also, it adopts root mean square propagation where it maintains per-parameter learning rates from taking the mean of previous magnitudes of the gradients for the weights. To calculate the loss, we used “binary \_cross entropy” which compares each of the predicted probabilities to actual binary output of 1 or 0. It then calculates the score which penalises the probabilities based on distance from the expected value and therefore making up for losses.
+**To complement the training of data through the layers, we used `Adam` Optimiser where it** maintains a per-parameter learning rate to improve performance on problems with sparse gradients. Also, it adopts root mean square propagation where it maintains per-parameter learning rates from taking the mean of previous magnitudes of the gradients for the weights. To calculate the loss, we used `binary \_cross entropy` which compares each of the predicted probabilities to actual binary output of 1 or 0. It then calculates the score which penalises the probabilities based on distance from the expected value and therefore making up for losses.
 
 Through the self-training process running through multiple epochs, the accuracy results becomes more optimal with increasing number of epochs, but take note not to overfit, as overfitting can result in decreased test accuracy despite optimal train accuracy rates. As such, using ANN is beneficial to find the most accurate variables for feature importance. 
 
@@ -322,7 +322,7 @@ Thus, for each set of the top 3 variables from feature importance (using EDA, Co
 
 
 
-|                         | With All 20 variables |            | With feature Importance |          |             |       |               |       |                |         |
+|                         | With All 20 variables |            | With feature Importance (Figures inside bracket denotes enhanced prediction accuracy with GridSearch) |          |             |       |               |       |                |         |
 |-------------------------|-----------------------|------------|-------------------------|----------|-------------|-------|---------------|-------|----------------|---------|
 |                         |                       |            | Top 3                   | features | derived     | using | each          | of    | the            | methods |
 |                         | With                  | GridSearch | EDA                     |          | Correlation |       | Random Forest |       | Neural Network |         |
@@ -339,11 +339,13 @@ It can be seen that, through using all 20 variables, and as compared to only usi
 Also, we can see that although top 3 feature importance from neural network yield a good result through Random forest prediction, classification accuracy for LDA (0.772) is not as optimal as compared to compared from top 3 feature importance using correlation (0.773) and random forest (0.795). This shows that while obtaining feature importance from a particular method might be good fit for one model, but not the other. This shows that, we should not limit ourselves to using only one method of obtaining feature importance, but rather we should try different alternative, and use different sets of features for different model predictions.
 
 
-
 ## Conclusion:
 Top three variables from feature importance using EDA: `uranium`, `arsenic`,`cadmium`
+
 Top three variables from feature importance using Correlation: `Aluminium`, `cadmium`, `chromium`
+
 Top three variables from feature importance using Random Forest: `Aluminium`, `Cadmium`, `perchlorate`
+
 Top three variables from feature importance using Artificial neural network: `Aluminium`, ,`chloramine`, `perchlorate`
 
 1. The 2 variables that appear the most number of times are Aluminium and Cadmium for top 3 feature importance using the 4 different methods. From this, we can tell that the 2 variables are key to ensuring that the water is safe to drink. It is vital to maintain and optimal amount of aluminium in the water, and decrease the amount of cadmium in water to as low as possible. High feature importance across various models suggest that such variables have a higher tendency of affecting the prediction of the independent variable, hence they should be “tackled”. Such observations could be well applied for other datasets, as the idea of feature importance is “universal” in the domain of data science. 
