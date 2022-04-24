@@ -6,9 +6,9 @@
 | Contribution List     	|                                 	|
 |-----------------------	|---------------------------------	|
 | Members:              	| Worked On:                      	|
-| Everyone                | Data Preparation                  | 
+| Everyone                | Data Preparation, Report writing  |               
 | Muhammad Nabil Hakeem 	| EDA, Random Forest              	|
-| Su Gaoyang            	| EDA, LDA, Neural Network        	|
+| Su Gaoyang            	| EDA, LDA&PCA, Neural Network.     |
 | Scott Wong            	| Presentation Slides, GridSearch 	|
 
 ## Dataset from:
@@ -27,7 +27,7 @@ Let us first take a look into the global Drinking water quality issue.<br>
 
 With this regard, is it necessary to test the quality of water based on ALL of the available variables in the water sample? Including ALL of the available variables may become a time-consuming process and demand a lot of computational power, which is certainly not viable for the prevalent testing of the water. In an attempt to improve efficiency and to improve prediction accuracy of testing of the water samples, we decide to look into feature importance,  where feature Importance refers to techniques that calculate a score for all the input features for a given model — the scores simply represent the “importance” of each feature. A higher score means that the specific feature will have a larger effect on the model that is being used to predict a certain variable. From the set of the scores, we can then sieve out the most important features, for prediction. 
 
-## Problem Statement: 
+## Problem Statement
 With so many different factors that can affect water quality, which ones have the most impact?<br>
 How does the prediction accuracy of the selected variables based on feature importance compare with prediction using all variables?<br>
 
@@ -60,7 +60,7 @@ To complement the approximation of seeing from approximation of the data, we hav
 But before that, we need to perform data preparation as well as some exploratory data analysis. Some forms of data cleaning include:
 
 1) <pre><code> txtdata="aluminium - dangerous if greater than 2.8 ammonia - dangerous if greater than 32.5 arsenic - dangerous if greater than 0.01….</code></pre> <br>
-A string description of the txtdata. The txtdata string shows the indications for     the safe and dangerous pertaining to each variable. (**Take not that they are not related to the overall is\_safe water quality, just an indication of the dangerous amounts of each element**)
+A string description of the `txtdata`. The txtdata string shows the indications for the safe and dangerous threshold pertaining to each variable. (**Take note: these indicators are not directly related to the overall is_safe water quality, just an indication of the dangerous amounts of each element**).
 Where through this, we need to extract  all of the **threshold values** from the abovementioned txtdata file, to be used later to create **binary categorical columns** for each of the variables.
 
 
@@ -259,11 +259,11 @@ Therefore, the top 3 features chosen from feature importance by using ANN is `al
 
 Top three variables from feature importance using EDA: `uranium`, `arsenic`,`cadmium`
 
-Top three variables from feature importance using Correlation: `Aluminium`, `cadmium`, `chromium`
+Top three variables from feature importance using Correlation: `aluminium`, `cadmium`, `chromium`
 
-Top three variables from feature importance using Random Forest: `Aluminium`, `Cadmium`, `perchlorate`
+Top three variables from feature importance using Random Forest: `aluminium`, `Cadmium`, `perchlorate`
 
-Top three variables from feature importance using Artificial neural network: `Aluminium`, ,`chloramine`, `perchlorate`
+Top three variables from feature importance using Artificial neural network: `aluminium`, ,`chloramine`, `perchlorate`
 
 From each of the sets of top three variables, we hereby perform machine learning models to the top variables only, via random forest and Linear discriminant analysis. From here, we can deduce which of the sets of top three variables can yield the best prediction accuracy. Also, How does the prediction accuracy of the selected variables based on feature importance(using top 3 variables only) compare with prediction using **all** variables? 
 
@@ -275,7 +275,7 @@ As abovementioned, we use random forest because it yields highly accurate result
 
 **3. Performance**: We can fine-tune and optimize our models to improve the performance if we understand the functioning of the models. 
 
-As such, we decide to adopt another machine learning model with enhanced explainability, but not necessarily better prediction results as compared to random forest. Afterall, our aim is not to achieve the best prediction result from using a particular model. Rather, we strive to see if using 3 variables from feature importance is comparable to using ALL 20 variables. Adding another machine learning model is just for interpreting the problem in a more explainable nature, and to see if the top 3 variables using feature importance can ensure comparable prediction results as with all 20 variables for another model. 
+As such, we decide to adopt another machine learning model with enhanced explainability, but not necessarily better prediction results as compared to random forest. Afterall, our aim is not to achieve the best prediction result from using a particular model. Rather, we strive to see if **using 3 variables from feature importance is comparable to using ALL 20 variables.** Adding another machine learning model is just for interpreting the problem in a more explainable nature, and to see if the top 3 variables using feature importance can ensure comparable prediction results as with all 20 variables for another model. 
 
 
 
@@ -348,11 +348,11 @@ Top three variables from feature importance using Random Forest: `Aluminium`, `C
 
 Top three variables from feature importance using Artificial neural network: `Aluminium`, ,`chloramine`, `perchlorate`
 
-1. The 2 variables that appear the most number of times are Aluminium and Cadmium for top 3 feature importance using the 4 different methods. From this, we can tell that the 2 variables are key to ensuring that the water is safe to drink. It is vital to maintain and optimal amount of aluminium in the water, and decrease the amount of cadmium in water to as low as possible. High feature importance across various models suggest that such variables have a higher tendency of affecting the prediction of the independent variable, hence they should be “tackled”. Such observations could be well applied for other datasets, as the idea of feature importance is “universal” in the domain of data science. 
+1. The 2 variables that **appear the most number of times** are `aluminium` and `cadmium` for top 3 feature importance using the 4 different methods. From this, we can tell that the 2 variables are key to ensuring that the water is safe to drink. It is vital to maintain and optimal amount of `aluminium` in the water, and decrease the amount of `cadmium` in water to as low as possible. High feature importance across various models suggest that such variables have a higher tendency of affecting the prediction of the independent variable, hence they should be “tackled”. Such observations could be well applied for other datasets, as the idea of feature importance is “universal” in the domain of data science. 
 
-2. Using ANN to get the feature importance yields good results under random forest prediction, but not as optimal for LDA. Furthermore, through ANN's self-learning, it doesn't tell you the process of reasoning on derivation of the results. Therefore, we should obtain feature importance using different machine learning models. In our data, obtaining feature importance through random forest and correlation yields higher classification accuracy than using LDA. Furthermore, blindly trusting the numerical information is undesirable too, as some of the numbers do not provide a clear visual representation of the data for us to interpret and sieve out irrelevant data, therefore, we have to validate and support the results via EDA and correlation that are descriptive-based, can make the prediction better understood.
+2. Using ANN to get the feature importance yields good results under random forest prediction, but not as optimal for LDA. Furthermore, through ANN's self-learning, it doesn't tell you the **process of reasoning on derivation of the results.** Therefore, we should obtain feature importance using different machine learning models. In our data, obtaining feature importance through random forest and correlation yields higher classification accuracy for LDA. Furthermore, blindly trusting the numerical information is undesirable too, as some of the numbers do not provide a clear visual representation of the data for us to interpret and sieve out irrelevant data, therefore, we have to **validate and support** the results via EDA and correlation that are descriptive-based, can make the prediction better understood.
 
-3. Using 3 Variables through feature importance across all of the 4 methods yields comparable results (classification accuracy) compared with using ALL 20 variables. Therefore, it can be said that using 3 carefully selected variables is sufficient for data accuracy and more efficient in computational power. With this insight, we can probably adopt such a method on datasets with huge amount of data (i.e. 1000 columns), as running through all columns of the datasets would be unrealistic as it incurs high time complexity and computational power.
+3. Using the top 3 Variables through feature importance across all of the 4 methods yields **comparable results (classification accuracy) compared with using ALL 20 variables**. Therefore, it can be said that using 3 carefully selected variables is *sufficient* for data accuracy and more *efficient* in computational power. With this insight, we can probably adopt such method on datasets with **huge amount of data (i.e. 1000 columns)**, as running through all columns of the datasets would be unrealistic as it incurs high time complexity and computational power.
 
 
 ## What we learned?:
