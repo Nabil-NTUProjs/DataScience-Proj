@@ -3,6 +3,13 @@
 2. Su Gaoyang (U2121723E)
 3. Scott Wong  (U2122366G)
 
+| Contribution List     	|                                 	|
+|-----------------------	|---------------------------------	|
+| Members:              	| Worked On:                      	|
+| Muhammad Nabil Hakeem 	| EDA, Random Forest              	|
+| Su Gaoyang            	| EDA, LDA, Neural Network        	|
+| Scott Wong            	| Presentation Slides, GridSearch 	|
+
 ## Dataset from:
 MsSmartyPants. (2021, June 30). Water quality. Kaggle. Retrieved February 3, 2022, from https://www.kaggle.com/datasets/mssmartypants/water-quality
 
