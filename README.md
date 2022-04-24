@@ -248,7 +248,7 @@ Through the self-training process running through multiple epochs, the accuracy 
 
 As seen from the model accuracy, model accuracy is increased with higher number of epochs, but we have to take not to overtrain the data with too many epochs. We can see the prediction accuracy is around 0.96 for the train, and 0.90 at max for the test value. Instead of overtraining the data, we can run at lower epochs of 60-80, before the test accuracy decreases. 
 
-![](https://github.com/Note06/DataScience-Proj/blob/main/Readme/Picture2.png)
+![](https://github.com/Note06/DataScience-Proj/blob/main/Readme/Picture2.PNG)
 
 Using the results from neural network, we can then find the feature importance, using a permutation importance, where the **feature importance** is calculated by noticing the **increase or decrease in error** when we **permute the values of a feature.** If permuting the values causes immense changes in the error, it means the feature is important for our model. 
 
