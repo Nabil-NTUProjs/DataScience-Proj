@@ -2,8 +2,8 @@
 ,,,Top 3 , features ,derived,using,each ,of , the,methods
 ,With,GridSearch,EDA,,Correlation,,Random Forest,,Neural Network,
 Model of Prediction ,RF,LDA,RF,LDA,RF,LDA,RF,LDA,RF,LDA
-Classification Accuracy,1,0.783,0.92,0.743,0.993,0.773,1,0.795,1,0.772
-True Positive,676,523,591, 495,684, 560,676, 602,669,551
-True Negative,692,548,   662, 522,675, 498,692,486,699, 505
-False Positive,0, 155,84, 189,0, 117,0, 86,0, 130
-False Negative,0, 142,31, 162,9, 193,0, 194,0, 182
+Classification Accuracy,1,0.783,0.92,0.739(0.789),0.993,0.779(0.823),0.999,0.797(0.821),0.999,0.780(0.802)
+True Positive,676,523,591, 555,684, 475,683, 504,678,512
+True Negative,692,548,   662, 456,675, 591,684,586,689, 555
+False Positive,0, 155,84, 230,0, 90,0, 104,0, 133
+False Negative,0, 142,31, 127,9, 212,1, 174,1, 168
