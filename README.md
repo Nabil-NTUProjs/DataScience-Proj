@@ -248,11 +248,11 @@ Through the self-training process running through multiple epochs, the accuracy 
 
 As seen from the model accuracy, model accuracy is increased with higher number of epochs, but we have to take not to overtrain the data with too many epochs. We can see the prediction accuracy is around 0.96 for the train, and 0.90 at max for the test value. Instead of overtraining the data, we can run at lower epochs of 60-80, before the test accuracy decreases. 
 
-![](https://github.com/Note06/DataScience-Proj/blob/main/Readme/Aspose.Words.27acc061-d1be-46c8-b3d1-fed75dd6db93.013.png)
+![](https://github.com/Note06/DataScience-Proj/blob/main/Readme/Picture2.png)
 
 Using the results from neural network, we can then find the feature importance, using a permutation importance, where the **feature importance** is calculated by noticing the **increase or decrease in error** when we **permute the values of a feature.** If permuting the values causes immense changes in the error, it means the feature is important for our model. 
 
-Therefore, the top 3 features chosen from feature importance by using ANN is `aluminium`,`perchlorate`,`silver`.
+Therefore, the top 3 features chosen from feature importance by using ANN is `aluminium`,`chloramine`, `perchlorate`.
 
 
 ## Using top 3 variables of feature importance derived from each method, perform prediction using Random Forest and Linear Discriminant Analysis, and compare with prediction using all 20 variables.
@@ -263,7 +263,7 @@ Top three variables from feature importance using Correlation: `Aluminium`, `cad
 
 Top three variables from feature importance using Random Forest: `Aluminium`, `Cadmium`, `perchlorate`
 
-Top three variables from feature importance using Artificial neural network: `Aluminium`, `perchlorate`, `silver`
+Top three variables from feature importance using Artificial neural network: `Aluminium`, ,`chloramine`, `perchlorate`
 
 From each of the sets of top three variables, we hereby perform machine learning models to the top variables only, via random forest and Linear discriminant analysis. From here, we can deduce which of the sets of top three variables can yield the best prediction accuracy. Also, How does the prediction accuracy of the selected variables based on feature importance(using top 3 variables only) compare with prediction using **all** variables? 
 
@@ -341,10 +341,10 @@ Also, we can see that although top 3 feature importance from neural network yiel
 
 
 ## Conclusion:
-Top three variables from feature importance using EDA: 'uranium', 'arsenic','cadmium'
-Top three variables from feature importance using Correlation: 'Aluminium', 'cadmium', 'chromium'
-Top three variables from feature importance using Random Forest: 'Aluminium', 'Cadmium', 'perchlorate'
-Top three variables from feature importance using Artificial neural network: 'Aluminium', 'perchlorate', 'silver'
+Top three variables from feature importance using EDA: `uranium`, `arsenic`,`cadmium`
+Top three variables from feature importance using Correlation: `Aluminium`, `cadmium`, `chromium`
+Top three variables from feature importance using Random Forest: `Aluminium`, `Cadmium`, `perchlorate`
+Top three variables from feature importance using Artificial neural network: `Aluminium`, ,`chloramine`, `perchlorate`
 
 1. The 2 variables that appear the most number of times are Aluminium and Cadmium for top 3 feature importance using the 4 different methods. From this, we can tell that the 2 variables are key to ensuring that the water is safe to drink. It is vital to maintain and optimal amount of aluminium in the water, and decrease the amount of cadmium in water to as low as possible. High feature importance across various models suggest that such variables have a higher tendency of affecting the prediction of the independent variable, hence they should be “tackled”. Such observations could be well applied for other datasets, as the idea of feature importance is “universal” in the domain of data science. 
 
