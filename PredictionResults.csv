@@ -1,4 +1,4 @@
-﻿,With All 20 variables,,With feature Importance,,,,,,,
+﻿,With All 20 variables,,With feature Importance<br>(Bracketed components show results with GridSearch),,,,,,,
 ,,,Top 3 , features ,derived,using,each ,of , the,methods
 ,With,GridSearch,EDA,,Correlation,,Random Forest,,Neural Network,
 Model of Prediction ,RF,LDA,RF,LDA,RF,LDA,RF,LDA,RF,LDA
